@@ -191,29 +191,29 @@
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script>
-        $("#titulo").hide()
-        $("#subtitulo").hide()
-        $(".form").hide()
-        $("#formulario").validate()
+        $("#titulo").hide();
+        $("#subtitulo").hide();
+        $(".form").hide();
+        $("#formulario").validate();
         
         $(document).ready(function()
         {
-            var width = $(window).width()
-            var titulo = $("#titulo")
-            var subtitulo = $("#subtitulo")
-            titulo.fadeIn(3000)
-            subtitulo.fadeIn(4000)        
+            var width = $(window).width();
+            var titulo = $("#titulo");
+            var subtitulo = $("#subtitulo");
+            titulo.fadeIn(3000);
+            subtitulo.fadeIn(4000);
 
             if(width <= 600)
             {
-                titulo.css("font-size", "0.2em")
+                titulo.css("font-size", "0.2em");
             }    
         })
         
         $(".botao").click(function()
             {
-                $(".inscricao").css("height", "fit-content")
-                $(".form").fadeToggle()
+                $(".inscricao").css("height", "fit-content");
+                $(".form").fadeToggle();
             }
         )
         
