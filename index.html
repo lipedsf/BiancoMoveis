@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bianco Móveis</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -71,10 +72,39 @@
             display: block;
             padding: 1em;
         }
-        
+        .form
+        {
+          padding: 5em;
+          width: 400px;
+          background-color: whitesmoke;
+          border: solid 2px rgb(224, 222, 222);
+          border-radius: 3%;
+        }
+        .texto
+        {
+         
+          max-width: 400px;
+        }
+        .beneficios
+        { 
+          margin: 2em 0;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+        }
+
+        .beneficios i
+        {
+          font-size: 5em;
+        }
         .carousel
         {
             max-width: 1200px !important;
+        }
+        form 
+        {
+            max-width: 900px;
+            margin: 0 auto;
         }
         input:focus
         {
@@ -99,16 +129,16 @@
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="img/1.jpg" class="d-block w-100" alt="...">
+                <img src="\img\1.jpg" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="img/2.jpg" class="d-block w-100" alt="...">
+                <img src="\img\2.jpg" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="img/3.jpg" class="d-block w-100" alt="...">
+                <img src="\img\3.jpg" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="img/4.jpg" class="d-block w-100" alt="...">
+                <img src="\img\4.jpg" class="d-block w-100" alt="...">
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -121,19 +151,53 @@
             </a>
           </div>
           <div>
-            <h1> Venha participar da nossa inauguração!</h1>
-            <p> é necessária a inscrição para participar</p>
+            <h1> Inscreva-se para ter uma série de beneficios!</h1>
+            <h2> 1. Não perca nossa inauguração! </h2>
+            <div class="beneficios">
+              <p class="texto"> Inscreva-se para participar da nossa <strong>INAUGURAÇÃO</strong> no dia 01/12 às 14h na nossa nova loja na Av. Rio Branco, 2912, loja 1</p>
+            <i class="fas fa-glass-cheers"></i>
+            </div>
+            <h2> 2. O que ganho com a minha inscrição? </h2>
+            <div class="beneficios"> 
+            <p class="texto">Participe de sorteios <strong>EXCLUSIVOS</strong> que ocorrerão na inauguração. Inscreva-se, participe e ganhe diversos prêmios</p>
+            <i class="fas fa-gift"></i>
+            </div>
+            <h2> 3. Como faço para participar? </h2>
+            <div class="beneficios">
+              <p class="texto"> Apenas cadastre-se e participe da inauguração e de todos os sorteios, somente preencha os campos e aproveite os beneficios!</p>
+              <i class="fas fa-align-left"></i>
+            </div>
           </div>
 
     </section> 
     <section class="inscricao">
         <input type="button" class="botao" value="Inscreva-se">
+        <div class="form">
+          <form id="formulario">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required minlength="16">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Nome</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" required minlength="20" maxliength="40">
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Quero receber emails sobre as novas coleções</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script>
         $("#titulo").hide()
         $("#subtitulo").hide()
-    
+        $(".form").hide()
+        $("#formulario").validate()
+        
         $(document).ready(function()
         {
             var width = $(window).width()
@@ -147,15 +211,15 @@
                 titulo.css("font-size", "0.2em")
             }    
         })
-
-        $(".botao").mouseenter(function()
-        {
-            var botao = $(".botao")
-            botao.animete({fontSize: '10em'}, "slow")
-            
-        })
         
+        $(".botao").click(function()
+            {
+                $(".inscricao").css("height", "fit-content")
+                $(".form").fadeToggle()
+            }
+        )
         
     </script>
+    <script src="https://kit.fontawesome.com/4f82470a7c.js" crossorigin="anonymous"></script>
 </body>
 </html>
