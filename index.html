@@ -145,7 +145,6 @@
         }
         .caixas
         {
-          min-width: 700px;
           display: flex;
           flex-direction: row;
           justify-content: space-evenly;
@@ -176,6 +175,26 @@
             
             outline: none;
             box-shadow: none;
+        }
+
+        @media(max-width: 700px)
+        {
+          .caixas
+          {
+            min-width: 300px;
+          }
+        }
+
+        @media(min-width: 700px)
+        {
+          .caixas
+          {
+            min-width: 700px;
+          }
+          .caixa-texto
+          {
+            margin-top: 1em !important;
+          }
         }
         
     </style>
@@ -295,7 +314,6 @@ $(document).ready(function()
   $(".caixa-texto-1").hide()
   $(".caixa-texto-2").hide()
   $(".caixa-texto-3").hide()
-  var lenght = $(window).width()
   var titulo = $("#titulo")
   var subtitulo = $("#subtitulo")
   titulo.fadeIn(3000)
